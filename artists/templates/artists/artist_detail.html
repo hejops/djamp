@@ -1,0 +1,5 @@
+<h1>
+    <!-- TODO: table -->
+    <a href="{% url 'artists:detail' artist.pk %}">{{ artist.name }}</a>
+</h1>
+{% for x in artist.album_set.all %}<li>{{ x.name }}</li>{% endfor %}

@@ -2,10 +2,12 @@
 
 import os
 
-from artists.models import Album, Artist
+from artists.models import Album
+from artists.models import Artist
 
 LIBRARY_ROOT = os.environ["MU"]
 
+# don't sort, because the os always returns dirs in a deterministic order
 for a in os.scandir(LIBRARY_ROOT):
     # with unique=True, attempting to duplicate an artist raises IntegrityError
     # https://docs.djangoproject.com/en/5.0/ref/models/querysets/#get-or-create

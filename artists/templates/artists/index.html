@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'artists/style.css' %}" />
+<!-- TODO: search bar -->
+<!-- TODO: incremental search / autocomplete -->
+<!-- https://openfolder.sh/django-tutorial-as-you-type-search-with-ajax -->
+<!-- https://django-autocomplete-light.readthedocs.io/en/master/tutorial.html -->
+{% if artist_list %}
+    <ul>
+        {% for artist in artist_list %}
+            <li>
+                <!-- explicit namespacing `app_name` to be declared in artists/urls.py -->
+                <a href="{% url 'artists:detail' artist.pk %}">{{ artist.name }}</a>
+                <!-- <a href="foo">{{ artist.name }}</a> -->
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No artists are available.</p>
+{% endif %}

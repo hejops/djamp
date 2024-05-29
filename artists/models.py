@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # ./manage.py migrate
 # ./manage.py makemigrations
 # ./manage.py migrate
